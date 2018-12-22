@@ -3,9 +3,7 @@
 * Aydin Cinar <cinar.aydinn@gmail.com>
 */
 
-'use strict';
-
-const Binder = function (states) {
+const Binder = function Binder(states) {
     this.states = states;
 
     // Define Value & Html Attribute
@@ -43,20 +41,17 @@ const Binder = function (states) {
     * @params (String state) is required
     */
     const updateDomObject = (state) => {
-        const filterByValue = elementsByValue.filter(item => {
-            return item.getAttribute(config.bindValue) === state;
-        });
-
-        const filterByHtml = elementsByHtml.filter(item => {
-            return item.getAttribute(config.bindHtml) === state;
-        });
+        const filterByValue = elementsByValue.filter(item => item.getAttribute(config.bindValue) === state);
+        const filterByHtml = elementsByHtml.filter(item => item.getAttribute(config.bindHtml) === state);
 
         filterByValue.forEach((el) => {
-            el.value = this.states[state];
+            const element = el;
+            element.value = this.states[state];
         });
 
         filterByHtml.forEach((el) => {
-            el.innerHTML = this.states[state];
+            const element = el;
+            element.innerHTML = this.states[state];
         });
     };
 
@@ -71,7 +66,8 @@ const Binder = function (states) {
     * Value elements (text, textarea) will add dom listener
     * This objects's value change, all of dom will be update
     */
-    elementsByValue.forEach((element) => {
+    elementsByValue.forEach((el) => {
+        const element = el;
         element.onkeyup = () => {
             const state = element.getAttribute(config.bindValue);
             const bindData = element.value;
@@ -90,7 +86,7 @@ const Binder = function (states) {
 * @params (String state || Object state) is required. Use for : which will state change?
 * @params (String state) is required. Use for : which will state change?
 */
-Binder.prototype.setState = function (state, value) {
+Binder.prototype.setState = function setSate(state, value) {
     // If state parameter's type is object, all keys will be update
     if (typeof state === 'object') {
         const keyList = Object.keys(state);
@@ -105,6 +101,5 @@ Binder.prototype.setState = function (state, value) {
     this.update();
 };
 
-export default {
-    Binder
-};
+Binder.version = '1.0.2';
+
