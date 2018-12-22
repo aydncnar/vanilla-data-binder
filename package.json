@@ -1,0 +1,25 @@
+{
+  "name": "vanilla-data-binder",
+  "version": "1.0.0",
+  "description": "You can basic 2 way data bind with this package.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aydncnar/vanilla-data-binder.git"
+  },
+  "keywords": [
+    "2way",
+    "data",
+    "bind",
+    "javascript"
+  ],
+  "author": "Aydin Cinar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aydncnar/vanilla-data-binder/issues"
+  },
+  "homepage": "https://github.com/aydncnar/vanilla-data-binder#readme"
+}
