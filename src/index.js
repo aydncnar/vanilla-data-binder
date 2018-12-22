@@ -101,5 +101,5 @@ Binder.prototype.setState = function setSate(state, value) {
     this.update();
 };
 
-Binder.version = '1.0.2';
+Binder.prototype.version = '1.0.2';
 
