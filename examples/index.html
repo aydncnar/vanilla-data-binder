@@ -5,20 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src="../lib/index.js"></script>
-    <script>
-        let states = {
-            name: 'Aydin Cinar'
-        };
-
-        window.onload = function() {
-            var binder = new Binder(states);
-        }
-        
-    </script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="./bundle.js"></script>
 </head>
 <body>
-    Value Element: <input type="text" data-bind-value="name"> <br>
-    Html Element: <span data-bind-html="name"></>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mx">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group mt-5">
+                            <label>Name</label>
+                            <input class="form-control" data-bind-value="name">
+                            <h3 class="mt-2"> <span>Name: </span><span class="badge badge-secondary" data-bind-html="name"></span></h3>
+                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group mt-5">
+                            <label>Age</label>
+                            <input class="form-control" data-bind-value="age">
+                            <h3 class="mt-2"><span>Age: </span><span class="badge badge-secondary" data-bind-html="age"></span></h3>
+                            </div>
+                    </div>   
+                    <div class="col-md-12">
+                        <hr />
+                        <button id="js-change-name" class="btn btn-primary">Change Name</button>
+                        <button id="js-change-age" class="btn btn-primary">Change Age</button>
+                        <button id="js-change-name-age" class="btn btn-primary">Change Name & Age With Object</button>
+                    </div>                       
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
