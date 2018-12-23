@@ -1,10 +1,12 @@
 # Welcome to Vanilla Data Binder
 
-Sometimes you have to many variables. And if the variables will show on different places, this process can  so complex sometimes. You must select dom objects and change their property. And dom object's property change, you must listen dom events and change your variables by this events.
+Sometimes you have to many variables. And if the variables will show on different places, this process can  so complex sometimes. You must select dom objects and change their property. And when dom object's property change, you must listen dom events and change your variables by this events.
 
 Two way data binding is a method to make eaiser this process. You can use  "2 way data binding" on basic level with this package.
 
-![example vanilla data binder](https://media.giphy.com/media/khdjLv6hg2q8vEbgVB/giphy.gif)
+Only **1,36 KB**
+
+![enter image description here](https://media.giphy.com/media/khdjLv6hg2q8vEbgVB/giphy.gif)
 
 ### 1. Install:
 ```bash
@@ -36,15 +38,15 @@ window.onload = () => {
 ```
 HTML
 ```html
-<input type="text" data-bind-value="name" />
-<p data-bind-html="name"></p>
+<input type="text" data-bind-value="name" /> // data-bind-value use for text, textarea
+<p data-bind-html="name"></p> // data-bind-html use for div, span, p etc.
 ```
 
 ### 4. To Change states from javascript:
 
 ```js
-states.setState('name', 'Cinar'); // Name will set by Cinar
-states.setState('age', 26  +  5); // Age will set by 31
+states.setState('name', 'Aydin'); // Name will set by Aydin
+states.setState('age', 26  +  10); // Age will set by 36
 ```
 
 or 
@@ -59,5 +61,5 @@ const newValues = {
 	age: newAge(25)
 };
 
-states.setState(newValues);
+states.setState(newValues); // Output => name: Aydin Cinar, age: 40
 ```

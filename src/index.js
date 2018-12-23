@@ -101,7 +101,7 @@ Binder.prototype.setState = function setSate(state, value) {
     this.update();
 };
 
-Binder.prototype.version = '1.0.4';
+Binder.prototype.version = '1.0.6';
 
 export default {
     Binder
