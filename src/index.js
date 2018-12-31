@@ -74,8 +74,8 @@ const Binder = function Binder(states) {
     * This objects's value change, all of dom will be update
     */
     elementsByValue.forEach((el) => {
-        const element = el;        
-        element.onkeyup = () =>  updateHandle(element);
+        const element = el;
+        element.onkeyup = () => updateHandle(element);
         element.onchange = () => updateHandle(element);
     });
 
