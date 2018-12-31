@@ -62,18 +62,21 @@ const Binder = function Binder(states) {
         });
     };
 
+    const updateHandle = (el) => {
+        const state = el.getAttribute(config.bindValue);
+        const bindData = el.value;
+        setState(state, bindData);
+        this.update();
+    };
+
     /*
     * Value elements (text, textarea) will add dom listener
     * This objects's value change, all of dom will be update
     */
     elementsByValue.forEach((el) => {
-        const element = el;
-        element.onkeyup = () => {
-            const state = element.getAttribute(config.bindValue);
-            const bindData = element.value;
-            setState(state, bindData);
-            this.update();
-        };
+        const element = el;        
+        element.onkeyup = () =>  updateHandle(element);
+        element.onchange = () => updateHandle(element);
     });
 
     // Update all dom when create new Binder
@@ -101,7 +104,7 @@ Binder.prototype.setState = function setSate(state, value) {
     this.update();
 };
 
-Binder.prototype.version = '1.0.6';
+Binder.prototype.version = '1.0.7';
 
 export default {
     Binder

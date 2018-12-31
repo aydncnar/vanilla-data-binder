@@ -1,6 +1,6 @@
 {
   "name": "vanilla-data-binder",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "You can use 2 way data binding.",
   "main": "./lib/index.js",
   "scripts": {
@@ -12,7 +12,7 @@
     "test:examples": "node examples/",
     "cover": "istanbul cover _mocha -- --require babel-core/register --require babel-polyfill --recursive",
     "lint": "eslint src test",
-    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib && webpack",
     "build:example": "webpack",
     "prepublish": "npm run clean && npm run lint && npm run build"
   },
