@@ -4,7 +4,8 @@ If variables will show on different places, this process can be so complex. You 
 
 Two way data binding is a method to make eaiser this process. You can use "2 way data binding" on basic level with this package.
 
-Only **1,36 KB**
+![npm bundle size](https://img.shields.io/bundlephobia/min/vanilla-data-binder)
+![npm](https://img.shields.io/npm/dy/vanilla-data-binder)
 
 ![enter image description here](https://media.giphy.com/media/khdjLv6hg2q8vEbgVB/giphy.gif)
 
